@@ -1,25 +1,29 @@
 # Sistema de Gerenciamento de Biblioteca 📚
 
-Este projeto foi desenvolvido como parte do curso de **Ciência da Computação**, com foco na aplicação prática de conceitos fundamentais de **Programação Orientada a Objetos (POO)** utilizando a linguagem Java.
+Este projeto foi desenvolvido durante o terceiro período de **Ciência da Computação na UEPB**. O objetivo principal é a aplicação prática dos pilares da **Programação Orientada a Objetos (POO)** utilizando a linguagem Java para simular a operação real de uma biblioteca.
 
-## 🚀 Funcionalidades
-O sistema utiliza uma arquitetura centralizada onde a classe **Biblioteca** gerencia toda a inteligência do negócio:
-- **Gestão de Cadastro:** Controle central de usuários (**Aluno** e **Professor**) e do acervo de **Livros**.
-- **Movimentações:** Lógica completa de **Empréstimo** e **Devolução** processada pela biblioteca.
-- **Controle de Fluxo:** Mediação entre as entidades e registro de transações.
+## 🚀 Funcionalidades e Inteligência de Negócio
+O sistema foi estruturado para que a classe **Biblioteca** atue como o controlador central, sendo responsável por:
+- **Gestão de Entidades:** Métodos para adicionar e organizar novos usuários e livros no sistema.
+- **Movimentações Críticas:** Execução e validação de processos de **Empréstimo** e **Devolução**.
+- **Regras de Negócio:** Centralização da lógica de controle, garantindo a integridade dos dados entre livros e usuários.
 
 ## 🛠️ Conceitos de POO Aplicados
-Para garantir um código limpo e escalável, foram utilizados os seguintes pilares:
-- **Abstração e Encapsulamento:** Proteção dos estados dos objetos e métodos de acesso controlados.
-- **Herança e Polimorfismo:** Implementados na hierarquia de `Usuario`, permitindo tratamentos genéricos para `Aluno` e `Professor`.
-- **Composição e Agregação:** A classe `Biblioteca` atua como um agregador que contém e gerencia as listas de livros e usuários.
+A arquitetura do projeto explora profundamente as interações entre objetos:
 
-## 📂 Estrutura do Projeto
-- `Main.java`: Ponto de entrada que demonstra o funcionamento das operações.
-- `Biblioteca.java`: Controlador central responsável por adicionar usuários/livros e processar movimentações.
-- `Usuario.java`, `Aluno.java`, `Professor.java`: Modelagem da hierarquia de perfis do sistema.
-- `Livro.java`: Entidade que representa os itens do acervo.
-- `Emprestimo.java`: Registro detalhado das transações realizadas.
+- **Encapsulamento:** Proteção dos atributos das classes através de modificadores de acesso (`private`), utilizando métodos `Getters` e `Setters` para garantir a integridade dos dados.
+- **Herança e Reescrita (`@Override`):** Utilização de superclasses para perfis de usuários, onde comportamentos específicos de `Aluno` e `Professor` são refinados através da reescrita de métodos.
+- **Polimorfismo:** Capacidade do sistema de tratar diferentes tipos de usuários de forma genérica através da classe base, facilitando a expansão do código.
+- **Composição e Agregação:** A classe `Biblioteca` utiliza coleções para gerenciar o acervo e os usuários, demonstrando como objetos complexos são formados por partes menores.
+- **Relacionamentos:** Implementação de associações claras entre `Emprestimo`, `Livro` e `Usuario`.
+
+## 📂 Estrutura das Classes
+- `Main.java`: Ponto de entrada para execução e testes das funcionalidades.
+- `Biblioteca.java`: O controlador do sistema (Adição de dados e controle de estoque/empréstimos).
+- `Usuario.java`: Superclasse base para a hierarquia de pessoas no sistema.
+- `Aluno.java` & `Professor.java`: Subclasses que herdam de Usuario.
+- `Livro.java`: Representação dos itens do acervo.
+- `Emprestimo.java`: Classe que vincula um usuário a um livro com regras de data e status.
 
 ---
 Desenvolvido por [Jose Netto](https://www.linkedin.com/in/josednetto/)
