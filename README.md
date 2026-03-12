@@ -1,1 +1,1 @@
-# Projeto de Biblioteca - Teste YOLO.
+# Projeto de Biblioteca
