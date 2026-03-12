@@ -8,18 +8,11 @@ public class Emprestimo {
         this.livro = livro;
     }
 
-    public void realizarEmprestimo() {
+    public Usuario getUsuario() {
+        return usuario;
+    }
 
-        if (livro.isDisponivel()) {
-
-            livro.emprestar();
-
-            System.out.println("Livro: " + livro.getTitulo());
-            System.out.println("Usuário: " + usuario.getNome());
-            System.out.println("Prazo de devolução: " + usuario.prazoDevolucao() + " dias");
-
-        } else {
-            System.out.println("Livro indisponível");
-        }
+    public Livro getLivro() {
+        return livro;
     }
 }
