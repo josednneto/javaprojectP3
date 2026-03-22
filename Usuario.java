@@ -1,4 +1,4 @@
-public class Usuario {
+public class Usuario implements Prazo{
 
     protected String nome;
     protected String cpf;
@@ -11,7 +11,8 @@ public class Usuario {
     public String getNome() {
         return nome;
     }
-
+    
+    @Override
     public int prazoDevolucao() {
         return 7;
     }
