@@ -51,4 +51,36 @@ public class Biblioteca {
 
         System.out.println("Esse livro não está emprestado.");
     }
+    
+    public void relatorio() {
+    	System.out.println(">>> LIVROS DA BIBLIOTECA");
+    	for(Livro i : livros) {
+    		System.out.println("Título: " + i.getTitulo());
+    		if(i.isDisponivel()) {
+    			System.out.println("Situação: Disponível");
+    		}else {
+    			System.out.println("Situação: Indisponível");
+    		}
+    	}
+    	System.out.println();
+    	System.out.println(">>> USUÁRIOS E SITUAÇÃO");
+    	for(Usuario u : usuarios) {
+    		System.out.println("Nome: " + u.getNome());
+    		if(emprestimos.size() == 0) {
+    			System.out.println("> Nenhum empréstimo.");
+    		}else {
+    			for(Emprestimo e : emprestimos) {
+    				if(e.getUsuario() == u) {
+    					System.out.println("> Consta empréstimo.");
+    					Livro l = e.getLivro();
+    					System.out.println("Livro emprestado: " + l.getTitulo());
+    					System.out.println("Prazo de devolução: " + u.prazoDevolucao() + " dias.");
+    				}else {
+    					System.out.println("> Nenhum empréstimo.");
+    				}
+    			}
+    		}
+    		System.out.println();
+    	}
+    }
 }
